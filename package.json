@@ -1,0 +1,24 @@
+{
+  "name": "bell-on-bundler-error-plugin",
+  "version": "1.0.7",
+  "description": "Notification on bundler build errors by writing bell character to stderr output",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senotrusov/bell-on-bundler-error-plugin.git"
+  },
+  "keywords": [
+    "notification",
+    "bundler",
+    "build",
+    "error",
+    "bell",
+    "console"
+  ],
+  "author": "Stanislav Senotrusov (http://senotrusov.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/senotrusov/bell-on-bundler-error-plugin/issues"
+  },
+  "homepage": "https://github.com/senotrusov/bell-on-bundler-error-plugin#readme"
+}
