@@ -1,6 +1,7 @@
 # Bell on bundler error plugin
 
-Notification on [webpack module bundler](http://webpack.github.io/) build errors by writing bell character to stderr output
+Get notification on [webpack module bundler](http://webpack.github.io/) build errors.
+On that occasion, a bell character will be written to STDERR output.
 
 
 ## Usage
