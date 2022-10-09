@@ -1,4 +1,3 @@
-
 // Copyright 2015-2016 Stanislav Senotrusov
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function BellOnBundlerErrorPlugin () { }
+function BellOnBundlerErrorPlugin() {}
 
 BellOnBundlerErrorPlugin.prototype.apply = function(compiler) {
-  if (typeof(process) !== 'undefined'){
-    compiler.plugin('done', function(stats) { if (stats.hasErrors()) process.stderr.write('\x07') })
-    compiler.plugin('failed', function(err) { process.stderr.write('\x07') })
+  if (typeof process === 'undefined') {
+    return
+  }
+
+  var doneFunc = function(stats) {
+    if (stats.hasErrors()) {
+      process.stderr.write('\x07')
+    }
+  }
+
+  var failedFunc = function(err) {
+    process.stderr.write('\x07')
+  }
+
+  if (compiler.hooks) {
+    var plugin = { name: 'BellOnBundlerErrorPlugin' }
+
+    compiler.hooks.done.tap(plugin, doneFunc)
+    compiler.hooks.failed.tap(plugin, failedFunc)
+  } else {
+    compiler.plugin('done', doneFunc)
+    compiler.plugin('failed', failedFunc)
   }
 }
 
