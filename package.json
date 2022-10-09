@@ -1,6 +1,6 @@
 {
   "name": "bell-on-bundler-error-plugin",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Get notification on bundler build errors. On that occasion, a bell character will be written to STDERR output.",
   "keywords": [
     "notification",
